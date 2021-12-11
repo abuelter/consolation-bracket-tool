@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="form-floating">
+                <select class="form-select" id="team1Select" [(ngModel)]="team1" (change)="dropdownUpdated()">
+                    <option selected [value]="0" [disabled]="team1">Select Team</option>
+                    <option *ngFor="let team of teamData" [ngValue]="team"> {{ team.name }}</option>
+                </select>
+                <label for="team1Select">Select Team 1</label>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="form-floating">
+                <select class="form-select" id="team2Select" [(ngModel)]="team2" (change)=dropdownUpdated()>
+                    <option selected [value]="0" [disabled]="team2">Select Team</option>
+                    <option *ngFor="let team of teamData" [ngValue]="team"> {{ team.name }}</option>
+                </select>
+                <label for="team2Select">Select Team 2</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mb-4">
+            <div class="form-floating">
+                <select class="form-select" id="selectWeek" [(ngModel)]="week" (change)="dropdownUpdated()">
+                    <option selected [value]="0" [disabled]="week !== 0">None</option>
+                    <option [value]="1">Week 1</option>
+                    <option [value]="2">Week 2</option>
+                    <option [value]="3">Week 3</option>
+                    <option [value]="4">Week 4</option>
+                    <option [value]="5">Week 5</option>
+                    <option [value]="6">Week 6</option>
+                    <option [value]="7">Week 7</option>
+                    <option [value]="8">Week 8</option>
+                    <option [value]="9">Week 9</option>
+                    <option [value]="10">Week 10</option>
+                    <option [value]="11">Week 11</option>
+                    <option [value]="12">Week 12</option>
+                    <option [value]="13">Week 13</option>
+                    <option [value]="14">Week 14</option>
+                    <option [value]="15">Week 15</option>
+                    <option [value]="16">Week 16</option>
+                    <option [value]="17">Week 17</option>
+                    <option [value]="18">Week 18</option>
+                </select>
+                <label for="selectWeek">Select Week</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div *ngIf="team1 && week" class="col-md-6 mb-4">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3>{{ team1.name }}</h3>
+                </div>
+                <div class="card-body">
+                    <h2>{{ team1.points }}</h2>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="team2 && week" class="col-md-6 mb-4">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3>{{ team2.name }}</h3>
+                </div>
+                <div class="card-body">
+                    <h2>{{ team2.points }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
