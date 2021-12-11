@@ -29,6 +29,16 @@ export class ConsolationScoresComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    if (localStorage.getItem('team1')) {
+      this.team1 = this.teamData.find(team => team.id === Number(localStorage.getItem('team1')));
+    }
+    if (localStorage.getItem('team2')) {
+      this.team2 = this.teamData.find(team => team.id === Number(localStorage.getItem('team2')));
+    }
+    if (localStorage.getItem('week')) {
+      this.week = Number(localStorage.getItem('week'));
+    }
+    this.dropdownUpdated();
   }
 
   ngOnDestroy() {
@@ -37,6 +47,9 @@ export class ConsolationScoresComponent implements OnInit {
 
   dropdownUpdated() {
     if ((this.team1 || this.team2) && this.week !== 0) {
+      localStorage.setItem('team1', this.team1.id);
+      localStorage.setItem('team2', this.team2.id);
+      localStorage.setItem('week', this.week.toString());
       this.updateScoreData();
     }
   }
