@@ -12,6 +12,6 @@ export class SleeperService {
   ) { }
 
   getScoresForWeek(week: number): Observable<any> {
-    return this.http.get('https://api.sleeper.app/v1/league/653119272008114176/matchups/' + week);
+    return this.http.get('https://api.sleeper.app/v1/league/788172570317975552/matchups/' + week);
   }
 }
