@@ -13,15 +13,15 @@ export class ConsolationScoresComponent implements OnInit {
   public week: number = 0
   public updateScoresSubscription: Subscription | undefined;
   public teamData = [
-    { id: 1, name: 'Marinating Youth'},
-    { id: 2, name: 'Team alexfleher'},
+    { id: 1, name: 'Humble 2 time runner up'},
+    { id: 2, name: 'TeHe MaHoms r Christian'},
     { id: 3, name: 'Baby Powder'},
     { id: 4, name: 'Team mwmrox11'},
-    { id: 5, name: 'Team Rari'},
-    { id: 6, name: 'Team stephenmole'},
+    { id: 5, name: 'Owned by Waldner'},
+    { id: 6, name: 'My BallZach Ertz'},
     { id: 7, name: 'Team doleson'},
     { id: 8, name: 'Team dbuelter'},
-    { id: 9, name: 'Rhamondre\'s Taxi Service'},
+    { id: 9, name: 'Please Trade Me Your QBs'},
     { id: 10, name: 'Team JarrodJerowski'}
   ]
   constructor(
